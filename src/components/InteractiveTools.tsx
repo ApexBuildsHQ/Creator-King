@@ -1,10 +1,6 @@
-import { lazy, Suspense } from 'react';
+import { Suspense } from 'react';
 import { Language, TranslationSet } from '../types';
-
-// Lazy load the independent tool components from the tools folder
-const ImageCompressor = lazy(() => import('../tools/ImageCompressor'));
-const TextCutter = lazy(() => import('../tools/TextCutter'));
-const ImageExtractor = lazy(() => import('../tools/ImageExtractor'));
+import { getToolComponentById } from '../utils/toolsRegistry';
 
 interface InteractiveToolsProps {
   currentLang: Language;
@@ -14,6 +10,7 @@ interface InteractiveToolsProps {
 
 export function InteractiveTools({ currentLang, t, activeToolId }: InteractiveToolsProps) {
   const isRtl = currentLang === 'ar';
+  const ToolComponent = getToolComponentById(activeToolId);
 
   return (
     <div className="w-full bg-white dark:bg-slate-800 rounded-3xl border border-gray-100 dark:border-slate-700/50 shadow-xl overflow-hidden p-6 md:p-8">
@@ -23,14 +20,12 @@ export function InteractiveTools({ currentLang, t, activeToolId }: InteractiveTo
           <span>{t('loadingTool')}</span>
         </div>
       }>
-        {activeToolId === 'compressor' && (
-          <ImageCompressor t={t} isRtl={isRtl} currentLang={currentLang} />
-        )}
-        {activeToolId === 'cutter' && (
-          <TextCutter t={t} isRtl={isRtl} currentLang={currentLang} />
-        )}
-        {activeToolId === 'extractor' && (
-          <ImageExtractor t={t} isRtl={isRtl} currentLang={currentLang} />
+        {ToolComponent ? (
+          <ToolComponent t={t} isRtl={isRtl} currentLang={currentLang} />
+        ) : (
+          <div className="py-12 text-center text-sm text-gray-500 dark:text-slate-400">
+            {t('noToolsFound')}
+          </div>
         )}
       </Suspense>
     </div>

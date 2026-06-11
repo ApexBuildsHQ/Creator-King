@@ -1,25 +1,49 @@
-import ar from './locales/ar.json';
-import en from './locales/en.json';
-import fr from './locales/fr.json';
-import es from './locales/es.json';
-import { Language, TranslationSet } from './types';
+import { TranslationSet } from './types';
 
-export const translations: Record<Language, TranslationSet> = {
-  ar,
-  en,
-  fr,
-  es,
+type LocaleModule = {
+  default: TranslationSet;
 };
 
-/**
- * Returns a translation function `t` for the selected language
- * so we can use t('key') across the application.
- */
-export function getTranslation(lang: Language) {
-  const dataset = translations[lang] || translations['ar'];
-  
+function getLanguageCodeFromPath(filePath: string) {
+  const match = /\.\/locales\/(.+)\.json$/.exec(filePath);
+  return match ? match[1] : filePath;
+}
+
+function normalizeLabelKey(code: string) {
+  return (
+    'lang' +
+    code
+      .split(/[-_]/)
+      .map((segment) => segment.charAt(0).toUpperCase() + segment.slice(1))
+      .join('')
+  );
+}
+
+const localeModules = import.meta.glob<LocaleModule>('./locales/*.json', { eager: true });
+
+export const resources: Record<string, { translation: TranslationSet }> = Object.entries(localeModules).reduce(
+  (acc, [filePath, module]) => {
+    const code = getLanguageCodeFromPath(filePath);
+    acc[code] = { translation: module.default };
+    return acc;
+  },
+  {} as Record<string, { translation: TranslationSet }>
+);
+
+export const supportedLanguages = Object.keys(resources).map((code) => {
+  const translation = resources[code].translation;
+  const labelKey = normalizeLabelKey(code) as keyof TranslationSet;
+  const label = (translation[labelKey] as unknown as string) || code;
+  return { code, label };
+});
+
+const defaultLanguage = supportedLanguages[0]?.code || 'ar';
+
+export function getTranslation(lang: string) {
+  const dataset = resources[lang]?.translation || resources[defaultLanguage]?.translation;
+
   const t = (key: keyof TranslationSet): string => {
-    return dataset[key] || '';
+    return (dataset?.[key] as string) || '';
   };
 
   return { t };

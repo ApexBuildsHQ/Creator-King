@@ -1,4 +1,4 @@
-export type Language = 'ar' | 'en' | 'fr' | 'es';
+export type Language = string;
 
 export interface TranslationSet {
   brand: string;
@@ -100,11 +100,22 @@ export interface TranslationSet {
 
 }
 
-export interface Tool {
+export interface ToolInfo {
   id: string;
-  title: string;
-  desc: string;
   icon: string;
   category: 'media' | 'text' | 'utility';
   isFullyInteractive: boolean;
+  titleKey: keyof TranslationSet;
+  descKey: keyof TranslationSet;
+}
+
+export interface ToolComponentProps {
+  currentLang: Language;
+  t: (key: keyof TranslationSet) => string;
+  isRtl: boolean;
+}
+
+export interface Tool extends ToolInfo {
+  title: string;
+  desc: string;
 }

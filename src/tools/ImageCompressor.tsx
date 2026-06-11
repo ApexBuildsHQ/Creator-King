@@ -1,6 +1,15 @@
 import { useState, useRef, useEffect, DragEvent, ChangeEvent } from 'react';
 import { Download, Upload, Sliders, Image as ImageIcon } from 'lucide-react';
-import { Language, TranslationSet } from '../types';
+import { Language, TranslationSet, ToolInfo } from '../types';
+
+export const toolInfo: ToolInfo = {
+  id: 'compressor',
+  icon: 'Sliders',
+  category: 'media',
+  isFullyInteractive: true,
+  titleKey: 'tool_compressor_title',
+  descKey: 'tool_compressor_desc',
+};
 
 interface ImageCompressorProps {
   currentLang: Language;

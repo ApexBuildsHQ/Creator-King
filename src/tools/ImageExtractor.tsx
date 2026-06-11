@@ -1,6 +1,15 @@
 import { useState, DragEvent, ChangeEvent } from 'react';
 import { Palette, Upload } from 'lucide-react';
-import { Language, TranslationSet } from '../types';
+import { Language, TranslationSet, ToolInfo } from '../types';
+
+export const toolInfo: ToolInfo = {
+  id: 'extractor',
+  icon: 'Palette',
+  category: 'media',
+  isFullyInteractive: true,
+  titleKey: 'tool_extractor_title',
+  descKey: 'tool_extractor_desc',
+};
 
 interface ImageExtractorProps {
   currentLang: Language;

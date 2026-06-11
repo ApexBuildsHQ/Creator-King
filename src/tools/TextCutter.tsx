@@ -1,6 +1,15 @@
 import { useState, useEffect } from 'react';
 import { Scissors, Check, Copy } from 'lucide-react';
-import { Language, TranslationSet } from '../types';
+import { Language, TranslationSet, ToolInfo } from '../types';
+
+export const toolInfo: ToolInfo = {
+  id: 'cutter',
+  icon: 'Scissors',
+  category: 'text',
+  isFullyInteractive: true,
+  titleKey: 'tool_cutter_title',
+  descKey: 'tool_cutter_desc',
+};
 
 interface TextCutterProps {
   currentLang: Language;

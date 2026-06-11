@@ -1,10 +1,11 @@
 import { useState, useEffect, useRef } from 'react';
 import { Globe, Sun, Moon } from 'lucide-react';
-import { Language, TranslationSet } from '../types';
+import { TranslationSet } from '../types';
+import { supportedLanguages } from '../i18n';
 
 interface NavbarProps {
-  currentLang: Language;
-  onLanguageChange: (lang: Language) => void;
+  currentLang: string;
+  onLanguageChange: (lang: string) => void;
   t: (key: keyof TranslationSet) => string;
   isDarkMode: boolean;
   onToggleTheme: () => void;
@@ -27,12 +28,7 @@ export function Navbar({ currentLang, onLanguageChange, t, isDarkMode, onToggleT
     };
   }, []);
 
-  const languages: { code: Language; labelKey: keyof TranslationSet }[] = [
-    { code: 'ar', labelKey: 'langAr' },
-    { code: 'en', labelKey: 'langEn' },
-    { code: 'fr', labelKey: 'langFr' },
-    { code: 'es', labelKey: 'langEs' },
-  ];
+  const languages = supportedLanguages;
 
   return (
     <nav className="sticky top-0 z-50 w-full bg-white/80 dark:bg-slate-900/80 backdrop-blur-md border-b border-slate-200 dark:border-slate-800/85 transition-colors duration-200">
@@ -99,7 +95,7 @@ export function Navbar({ currentLang, onLanguageChange, t, isDarkMode, onToggleT
                       }`}
                       style={{ direction: lang.code === 'ar' ? 'rtl' : 'ltr' }}
                     >
-                      <span>{t(lang.labelKey)}</span>
+                      <span>{lang.label}</span>
                       {currentLang === lang.code && (
                         <span className="text-[10px] sm:text-xs">✦</span>
                       )}

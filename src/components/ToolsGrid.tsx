@@ -1,7 +1,7 @@
 import { useState, useMemo } from 'react';
 import * as Icons from 'lucide-react';
 import { Tool, Language, TranslationSet } from '../types';
-import { getToolsList } from './toolsData';
+import { getToolsList } from '../utils/toolsRegistry';
 
 interface ToolsGridProps {
   currentLang: Language;
