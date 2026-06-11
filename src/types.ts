@@ -98,6 +98,78 @@ export interface TranslationSet {
   "tool_extractor_title": string;
   "tool_extractor_desc": string;
 
+  video_cutter: {
+    title: string;
+    desc: string;
+    upload_btn: string;
+    start_time: string;
+    end_time: string;
+    preview: string;
+    export: string;
+    error_format: string;
+  };
+  video_merger: {
+    title: string;
+    desc: string;
+    drop_zone: string;
+    reorder: string;
+    resolution_preset: string;
+    merge_btn: string;
+    processing: string;
+  };
+  video_compressor: {
+    title: string;
+    desc: string;
+    preset_low: string;
+    preset_mid: string;
+    preset_high: string;
+    custom_size: string;
+    original_size: string;
+    estimated_size: string;
+    compress_btn: string;
+  };
+  audio_extractor: {
+    title: string;
+    desc: string;
+    format: string;
+    bitrate: string;
+    extract_btn: string;
+    success_msg: string;
+    error_format: string;
+    trim_option: string;
+    start_time: string;
+    end_time: string;
+  };
+  video_converter: {
+    title: string;
+    desc: string;
+    target_format: string;
+    fps_label: string;
+    width_label: string;
+    format_mp4: string;
+    format_webm: string;
+    format_gif: string;
+    width_preset_320: string;
+    width_preset_480: string;
+    custom_width_placeholder: string;
+    file_info: string;
+    loading_ffmpeg: string;
+    converting: string;
+    ready_download: string;
+    convert_btn: string;
+    error_conversion: string;
+    error_format: string;
+  };
+  "tool_video_cutter_title": string;
+  "tool_video_cutter_desc": string;
+  "tool_video_merger_title": string;
+  "tool_video_merger_desc": string;
+  "tool_video_compressor_title": string;
+  "tool_video_compressor_desc": string;
+  "tool_video_converter_title": string;
+  "tool_video_converter_desc": string;
+  "tool_audio_extractor_title": string;
+  "tool_audio_extractor_desc": string;
 }
 
 export interface ToolInfo {
@@ -111,7 +183,7 @@ export interface ToolInfo {
 
 export interface ToolComponentProps {
   currentLang: Language;
-  t: (key: keyof TranslationSet) => string;
+  t: (key: string) => string;
   isRtl: boolean;
 }
 

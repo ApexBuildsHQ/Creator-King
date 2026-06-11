@@ -42,8 +42,15 @@ const defaultLanguage = supportedLanguages[0]?.code || 'ar';
 export function getTranslation(lang: string) {
   const dataset = resources[lang]?.translation || resources[defaultLanguage]?.translation;
 
-  const t = (key: keyof TranslationSet): string => {
-    return (dataset?.[key] as string) || '';
+  const t = (key: string): string => {
+    if (!dataset) return '';
+    const path = key.split('.');
+    let current: any = dataset;
+    for (const segment of path) {
+      if (current == null) return '';
+      current = current[segment];
+    }
+    return typeof current === 'string' ? current : '';
   };
 
   return { t };
