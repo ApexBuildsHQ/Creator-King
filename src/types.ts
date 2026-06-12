@@ -160,6 +160,40 @@ export interface TranslationSet {
     error_conversion: string;
     error_format: string;
   };
+  video_reverser: {
+    title: string;
+    desc: string;
+    upload_btn: string;
+    processing: string;
+    ready_download: string;
+    error_conversion: string;
+    error_format: string;
+    audio_mode: string;
+    audio_reverse: string;
+    audio_mute: string;
+    audio_keep: string;
+    reverse_btn: string;
+  };
+  speed_changer: {
+    title: string;
+    desc: string;
+    upload_btn: string;
+    custom_speed: string;
+    custom_speed_slider: string;
+    pitch_lock: string;
+    pitch_lock_desc: string;
+    pitch_lock_help: string;
+    preset_speeds: string;
+    preset_desc: string;
+    advanced_range: string;
+    range_desc: string;
+    process_btn: string;
+    processing: string;
+    ready_download: string;
+    error_conversion: string;
+    error_format: string;
+    loading_ffmpeg: string;
+  };
   "tool_video_cutter_title": string;
   "tool_video_cutter_desc": string;
   "tool_video_merger_title": string;
@@ -168,6 +202,10 @@ export interface TranslationSet {
   "tool_video_compressor_desc": string;
   "tool_video_converter_title": string;
   "tool_video_converter_desc": string;
+  "tool_video_reverser_title": string;
+  "tool_video_reverser_desc": string;
+  "tool_speed_changer_title": string;
+  "tool_speed_changer_desc": string;
   "tool_audio_extractor_title": string;
   "tool_audio_extractor_desc": string;
 }
