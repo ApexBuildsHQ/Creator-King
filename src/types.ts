@@ -232,6 +232,15 @@ export interface TranslationSet {
     error_missing_text: string;
     error_processing: string;
   };
+    recorder: {
+      title: string;
+      desc: string;
+      source_select: string;
+      audio_mic: string;
+      cam_layout: string;
+      start_btn: string;
+      stop_btn: string;
+    };
 }
 
 export interface ToolInfo {
