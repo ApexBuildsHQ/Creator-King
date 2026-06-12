@@ -166,7 +166,7 @@ export default function WatermarkAdder({ t }: ToolComponentProps) {
       return;
     }
     setVideoFile(file);
-    setOutputName(`${file.name.replace(/\.[^.]+$/, '')}_watermarked.mp4`);
+    setDownloadFileName(`${file.name.replace(/\.[^.]+$/, '')}_watermarked.mp4`);
     setErrorMessage('');
     setDownloadUrl('');
   };
@@ -262,9 +262,10 @@ export default function WatermarkAdder({ t }: ToolComponentProps) {
 
   const watermarkPreview = useMemo(() => {
     if (watermarkType === 'image' && watermarkImageUrl) return watermarkImageUrl;
-    if (watermarkType === 'text' && watermarkText.trim()) return `data:image/svg+xml;charset=utf-8,${encodeURIComponent(`
-      <svg xmlns=\"http://www.w3.org/2000/svg\" width=\"400\" height=\"120\"><rect width=\"100%\" height=\"100%\" fill=\"transparent\"/><text x=\"50%\" y=\"50%\" dominant-baseline=\"middle\" text-anchor=\"middle\" fill=\"${watermarkColor}\" font-family=\"${selectedFont}\" font-size=\"42\">${watermarkText}</text></svg>`)}
-    );
+    if (watermarkType === 'text' && watermarkText.trim()) {
+      const svgString = `<svg xmlns="http://www.w3.org/2000/svg" width="400" height="120"><rect width="100%" height="100%" fill="transparent"/><text x="50%" y="50%" dominant-baseline="middle" text-anchor="middle" fill="${watermarkColor}" font-family="${selectedFont}" font-size="42">${watermarkText}</text></svg>`;
+      return `data:image/svg+xml;charset=utf-8,${encodeURIComponent(svgString)}`;
+    }
     return '';
   }, [watermarkType, watermarkImageUrl, watermarkText, watermarkColor, selectedFont]);
 

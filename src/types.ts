@@ -200,6 +200,8 @@ export interface TranslationSet {
   "tool_video_merger_desc": string;
   "tool_video_compressor_title": string;
   "tool_video_compressor_desc": string;
+  "tool_bpm_counter_title": string;
+  "tool_bpm_counter_desc": string;
   "tool_watermark_adder_title": string;
   "tool_watermark_adder_desc": string;
   "tool_video_converter_title": string;
@@ -210,6 +212,30 @@ export interface TranslationSet {
   "tool_speed_changer_desc": string;
   "tool_audio_extractor_title": string;
   "tool_audio_extractor_desc": string;
+  "tool_screen_camera_recorder_title": string;
+  "tool_screen_camera_recorder_desc": string;
+  "tool_audio_cutter_title": string;
+  "tool_audio_cutter_desc": string;
+  recorder: {
+    title: string;
+
+    desc: string;
+    source_select: string;
+    source_screen: string;
+    source_camera: string;
+    source_screen_camera: string;
+    audio_mic: string;
+    cam_layout: string;
+    layout_floating: string;
+    layout_side: string;
+    layout_split: string;
+    start_btn: string;
+    stop_btn: string;
+    ready_download: string;
+    recording: string;
+    error_permission: string;
+    error_processing: string;
+  };
   watermark_adder: {
     title: string;
     desc: string;
@@ -232,15 +258,6 @@ export interface TranslationSet {
     error_missing_text: string;
     error_processing: string;
   };
-    recorder: {
-      title: string;
-      desc: string;
-      source_select: string;
-      audio_mic: string;
-      cam_layout: string;
-      start_btn: string;
-      stop_btn: string;
-    };
 }
 
 export interface ToolInfo {

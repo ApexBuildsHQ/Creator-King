@@ -149,6 +149,27 @@
     "error_missing_text": "Veuillez entrer du texte de filigrane ou sélectionner une image.",
     "error_processing": "Le traitement du filigrane a échoué. Essayez un autre fichier ou repositionnez la superposition."
   },
+  "tool_screen_camera_recorder_title": "Enregistreur Écran et Caméra",
+  "tool_screen_camera_recorder_desc": "Un enregistreur natif du navigateur sans latence qui capture les écrans de bureau avec des superpositions webcam, encodant le flux directement en WebM/MP4.",
+  "recorder": {
+    "title": "Enregistreur Écran et Caméra",
+    "desc": "Un enregistreur natif du navigateur sans latence qui capture les écrans de bureau avec des superpositions webcam en temps réel.",
+    "source_select": "Source de capture",
+    "source_screen": "Écran uniquement",
+    "source_camera": "Caméra uniquement",
+    "source_screen_camera": "Écran + caméra",
+    "audio_mic": "Inclure le microphone",
+    "cam_layout": "Disposition de la superposition caméra",
+    "layout_floating": "Flottante circulaire",
+    "layout_side": "Volet latéral",
+    "layout_split": "Écran partagé",
+    "start_btn": "Démarrer l'enregistrement",
+    "stop_btn": "Arrêter et sauvegarder localement",
+    "ready_download": "Enregistrement prêt à être lu.",
+    "recording": "Enregistrement en direct...",
+    "error_permission": "Impossible de démarrer l'enregistrement. Autorisez l'accès à l'écran, à la caméra et au micro.",
+    "error_processing": "L'enregistrement a échoué. Réessayez ou actualisez la page."
+  },
   "tool_video_converter_title": "Convertisseur de Format & GIF",
   "tool_video_converter_desc": "Convertit les vidéos locales en formats web standard ou les boucle en GIF animés haute performance avec optimisation du framerate et de la mise à l'échelle.",
   "video_converter": {
@@ -225,6 +246,8 @@
   },
   "tool_cutter_title": "Découpeur de Texte Intelligent",
   "tool_cutter_desc": "Découpez de façon ergonomique des textes longs par nombre de caractères, de mots ou de lignes.",
+  "tool_bpm_counter_title": "Compteur de BPM",
+  "tool_bpm_counter_desc": "Détectez le tempo d'un morceau et estimez les battements par minute en local.",
   "tool_extractor_title": "Extracteur de Couleurs et Métadonnées",
   "tool_extractor_desc": "Extrayez la palette de couleurs hexadécimales et d'autres informations intégrées en un clic."
 }

@@ -49,31 +49,6 @@ export default function VideoReverser({ t }: ToolComponentProps) {
     return () => URL.revokeObjectURL(objectUrl);
   }, [file]);
 
-export default function VideoReverser({ t }: ToolComponentProps) {
-  const [file, setFile] = useState<File | null>(null);
-  const [videoUrl, setVideoUrl] = useState<string>('');
-  const [downloadUrl, setDownloadUrl] = useState<string>('');
-  const [outputFileName, setOutputFileName] = useState<string>('');
-  const [audioMode, setAudioMode] = useState<AudioMode>('reverse');
-  const [loading, setLoading] = useState(false);
-  const [progress, setProgress] = useState<number>(0);
-  const [statusMessage, setStatusMessage] = useState<string>('');
-  const [errorMessage, setErrorMessage] = useState<string>('');
-
-  useEffect(() => {
-    if (!file) {
-      setVideoUrl('');
-      setOutputFileName('');
-      return;
-    }
-
-    setErrorMessage('');
-    const objectUrl = URL.createObjectURL(file);
-    setVideoUrl(objectUrl);
-    setOutputFileName(`${file.name.replace(/\.[^.]+$/, '')}_reversed.mp4`);
-    return () => URL.revokeObjectURL(objectUrl);
-  }, [file]);
-
   useEffect(() => {
     return () => {
       if (downloadUrl) {

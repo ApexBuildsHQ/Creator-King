@@ -149,6 +149,27 @@
     "error_missing_text": "Por favor, ingresa texto de marca de agua o selecciona una imagen.",
     "error_processing": "El procesamiento de la marca de agua falló. Intenta con otro archivo o reposiciona la superposición."
   },
+  "tool_screen_camera_recorder_title": "Grabador de Pantalla y Cámara",
+  "tool_screen_camera_recorder_desc": "Un grabador nativo del navegador con latencia cero que captura pantallas de escritorio junto a superposiciones de webcam, codificando la secuencia directamente a WebM/MP4.",
+  "recorder": {
+    "title": "Grabador de Pantalla y Cámara",
+    "desc": "Un grabador nativo del navegador con latencia cero que captura pantallas de escritorio junto a superposiciones de webcam.",
+    "source_select": "Fuente de captura",
+    "source_screen": "Solo pantalla",
+    "source_camera": "Solo cámara",
+    "source_screen_camera": "Pantalla + cámara",
+    "audio_mic": "Incluir micrófono",
+    "cam_layout": "Diseño de superposición de cámara",
+    "layout_floating": "Flotante circular",
+    "layout_side": "Panel lateral",
+    "layout_split": "Pantalla dividida",
+    "start_btn": "Iniciar grabación",
+    "stop_btn": "Detener y guardar localmente",
+    "ready_download": "Grabación lista para reproducir.",
+    "recording": "Grabando en vivo...",
+    "error_permission": "No se puede iniciar la grabación. Permite acceso a cámara, pantalla y micrófono.",
+    "error_processing": "La grabación falló. Intenta de nuevo o actualiza la página."
+  },
   "tool_video_converter_title": "Convertidor de Formato y GIF",
   "tool_video_converter_desc": "Convierte videos locales en formatos web estándar o los transforma en GIF animados optimizados con opciones de fotogramas y escala.",
   "video_converter": {
@@ -225,6 +246,8 @@
   },
   "tool_cutter_title": "Cortador de Texto Inteligente",
   "tool_cutter_desc": "Recorta textos extensos con precisión fina en base a caracteres, conteo de palabras o saltos de línea.",
+  "tool_bpm_counter_title": "Contador de BPM",
+  "tool_bpm_counter_desc": "Detecta el tempo de una pista y estima los latidos por minuto localmente.",
   "tool_extractor_title": "Extractor de Colores y Metadatos",
   "tool_extractor_desc": "Captura la paleta cromática HEX principal e información técnica interna de tus imágenes sin conexión."
 }

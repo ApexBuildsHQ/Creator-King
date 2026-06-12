@@ -1,4 +1,4 @@
-import { useState, useRef, useEffect } from 'react';
+import { useState, useRef, useEffect, ChangeEvent } from 'react';
 import { Music, Zap, RotateCcw, Upload } from 'lucide-react';
 import { Language, TranslationSet, ToolInfo } from '../types';
 
@@ -71,7 +71,7 @@ export default function BPMCounter({ t, isRtl }: { currentLang: Language; t: (ke
   };
 
   // Auto Mode - Analyze audio file for BPM
-  const handleFileChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+  const handleFileChange = (event: ChangeEvent<HTMLInputElement>) => {
     const file = event.target.files?.[0];
     if (file && file.type.startsWith('audio/')) {
       setAudioFile(file);
