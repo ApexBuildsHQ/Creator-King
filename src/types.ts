@@ -200,6 +200,8 @@ export interface TranslationSet {
   "tool_video_merger_desc": string;
   "tool_video_compressor_title": string;
   "tool_video_compressor_desc": string;
+  "tool_watermark_adder_title": string;
+  "tool_watermark_adder_desc": string;
   "tool_video_converter_title": string;
   "tool_video_converter_desc": string;
   "tool_video_reverser_title": string;
@@ -208,6 +210,28 @@ export interface TranslationSet {
   "tool_speed_changer_desc": string;
   "tool_audio_extractor_title": string;
   "tool_audio_extractor_desc": string;
+  watermark_adder: {
+    title: string;
+    desc: string;
+    type_text: string;
+    type_image: string;
+    text_input_placeholder: string;
+    position_grid: string;
+    opacity: string;
+    apply_btn: string;
+    loading_ffmpeg: string;
+    processing: string;
+    ready_download: string;
+    upload_image: string;
+    select_font: string;
+    color_picker: string;
+    x_offset: string;
+    y_offset: string;
+    error_invalid_video: string;
+    error_missing_video: string;
+    error_missing_text: string;
+    error_processing: string;
+  };
 }
 
 export interface ToolInfo {
