@@ -1,0 +1,6 @@
+{
+  "name": "Creator King",
+  "description": "أكثر من 20 أداة متطورة لمعالجة المحتوى الرقمي بأسلوب الملوك: ضاغط صور، قاطع نصوص، ومستخرج ألوان وبيانات بسرعة فائقة وخصوصية تامة.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
